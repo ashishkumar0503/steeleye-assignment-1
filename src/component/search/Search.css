@@ -1,0 +1,12 @@
+.inputSizeSmall{
+    font-size: small;
+    color: brown;
+}
+.inputSizeMedium{
+    font-size: medium;
+    color: burlywood;
+}
+.inputSizeLarger{
+    font-size: larger;
+    color: chocolate;
+}

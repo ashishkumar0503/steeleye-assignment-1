@@ -29,10 +29,8 @@ const Dashboard = () => {
 
   const filterRows = (searchText) => {
     if (searchText.trim() === "") {
-      // console.log("in");
       return mockData.results;
     }
-    // console.log("outer");
     const searchTextLowerCase = searchText.toLowerCase()
     // console.log(searchTextLowerCase);
     return mockData.results.filter(
@@ -43,6 +41,8 @@ const Dashboard = () => {
   // console.log(filterRows);
 
   const clickRow = (id) => {
+
+    // This will populate the data of selected order from the table into the selected order details table
     for (let index = 0; index < mockData.results.length; index++) {
       if (id === mockData.results[index]["&id"]) {
         const {executionDetails} = mockData.results[index];
@@ -50,6 +50,7 @@ const Dashboard = () => {
         break;
       } 
     }
+    // This will populate the data of selected order from the table into the selected order details table
     for (let index = 0; index < timestamps.results.length; index++) {
       if (id === timestamps.results[index]["&id"]) {
         const timestampData = timestamps.results[index].timestamps;
@@ -91,6 +92,7 @@ const Dashboard = () => {
         </div>
         {/* In order to get the order submitted date, here we need to pass the props */}
         {/* In order to get the order volume currency, here we need to pass the props */}
+        {/* In order to populate all the details of selected order and selected timestamps, we need id of that data, i.e of that particular clicked row */}
         <List rows={filterRows(searchText)} timestamps={timestamps.results} selectedCurrency={currency} onClick={clickRow} />
       </div>
     </div>
