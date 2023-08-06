@@ -2,7 +2,7 @@ import React from "react"
 import Search from "./Search"
 
 export default {
-    label : 'Seach Input Text',
+    label : 'Search Input Text',
     component : Search
 }
 
